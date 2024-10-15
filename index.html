@@ -31,12 +31,21 @@
         }
 
         /* Анимация заголовка */
-        h1 {
+        h1, h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
             color: #ffca28;
             animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
 
         @keyframes fadeIn {
@@ -48,18 +57,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #ff6b6b;
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin: 10px 0;
         }
 
         ul {
@@ -149,6 +146,10 @@
                 font-size: 2rem;
             }
 
+            h2 {
+                font-size: 1.5rem;
+            }
+
             ul li {
                 font-size: 1rem;
             }
@@ -156,26 +157,6 @@
             .container {
                 padding: 20px;
             }
-        }
-
-        /* Стили для кнопок соцсетей */
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-button {
-            width: 64px;
-            height: 64px;
-            margin: 0 10px; /* Отступ между кнопками */
-            background-size: contain; /* Масштабирование изображения */
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .social-button:hover {
-            transform: scale(1.1); /* Увеличение кнопки при наведении */
         }
     </style>
 </head>
@@ -185,33 +166,40 @@
     <div class="stars"></div>
 
     <div class="container">
-        <h1>Добро пожаловать в NoFap!</h1>
+        <h1>NoFap Сообщество</h1>
 
         <h2>Что такое NoFap?</h2>
-        <p>NoFap - это движение, целью которого является отказ от порнографии и мастурбации, чтобы улучшить качество жизни, повысить уровень энергии и наладить личные отношения.</p>
+        <p>NoFap — это движение, которое призывает людей воздерживаться от мастурбации и порнографии для улучшения психического и физического здоровья. Участники сообщества делятся своими успехами, трудностями и поддерживают друг друга в стремлении к более здоровому образу жизни.</p>
 
         <h2>Преимущества NoFap</h2>
         <ul>
-            <li style="animation-delay: 0.2s;">Повышение уверенности в себе.</li>
-            <li style="animation-delay: 0.4s;">Улучшение концентрации и продуктивности.</li>
-            <li style="animation-delay: 0.6s;">Значительное улучшение настроения.</li>
-            <li style="animation-delay: 0.8s;">Налаживание личных отношений.</li>
-            <li style="animation-delay: 1s;">Физические и психологические улучшения.</li>
+            <li style="animation-delay: 0.2s;">Улучшение концентрации и продуктивности.</li>
+            <li style="animation-delay: 0.4s;">Повышение энергии и мотивации.</li>
+            <li style="animation-delay: 0.6s;">Снижение уровня тревожности и депрессии.</li>
+            <li style="animation-delay: 0.8s;">Улучшение отношений и сексуальной жизни.</li>
+        </ul>
+
+        <h2>Советы для новичков</h2>
+        <ul>
+            <li style="animation-delay: 1s;">Установите четкие цели и сроки.</li>
+            <li style="animation-delay: 1.2s;">Ищите поддержку в сообществе.</li>
+            <li style="animation-delay: 1.4s;">Избегайте триггеров и источников искушения.</li>
+            <li style="animation-delay: 1.6s;">Занимайтесь спортом и хобби для отвлечения.</li>
+        </ul>
+
+        <h2>Ресурсы и ссылки</h2>
+        <ul>
+            <li style="animation-delay: 1.8s;"><a href="https://www.nofap.com" target="_blank" style="color: #ffca28;">Официальный сайт NoFap</a></li>
+            <li style="animation-delay: 2s;"><a href="https://www.reddit.com/r/NoFap" target="_blank" style="color: #ffca28;">Reddit: r/NoFap</a></li>
+            <li style="animation-delay: 2.2s;"><a href="https://www.nofap.com/forum/" target="_blank" style="color: #ffca28;">Форум NoFap</a></li>
         </ul>
 
         <div class="note">
-            Присоединяйтесь к нашему сообществу, чтобы получить поддержку и мотивацию!
-        </div>
-
-        <!-- Кнопки соцсетей -->
-        <div class="social-buttons">
-            <a href="https://t.me/DemkysX" target="_blank" class="social-button" style="background: url('telegram-64x64.png') no-repeat center;"></a>
-            <a href="https://www.instagram.com" target="_blank" class="social-button" style="background: url('instagram-64x64.png') no-repeat center;"></a>
-            <a href="https://www.facebook.com" target="_blank" class="social-button" style="background: url('facebook-64x64.png') no-repeat center;"></a>
+            Присоединяйтесь к нашему сообществу, чтобы делиться опытом и получать поддержку на пути к новым достижениям!
         </div>
 
         <footer>
-            Присоединяйтесь к нам и начните свой путь к лучшей жизни.
+            Администрация оставляет за собой право вносить изменения в содержание без обязательного уведомления участников.
         </footer>
     </div>
 

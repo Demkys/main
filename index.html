@@ -6,7 +6,6 @@
     <title>Главная | NoFap Сообщество</title>
     <link rel="icon" href="sbfma7pb (1).png" type="image/png">
     <style>
-        /* Основные стили */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #000000;
@@ -30,28 +29,21 @@
             color: #ffca28;
             font-size: 3rem;
             margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         p {
             text-align: center;
             font-size: 1.2rem;
             margin-bottom: 30px;
-            line-height: 1.8;
         }
 
-        .button {
+        /* Кнопки навигации */
+        .nav-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons a {
             display: inline-block;
             padding: 15px 25px;
             margin: 10px;
@@ -59,36 +51,17 @@
             color: white;
             background-color: #ff6b6b;
             border-radius: 5px;
-            text-align: center;
             text-decoration: none;
             transition: background-color 0.3s;
         }
 
-        .button:hover {
+        .nav-buttons a:hover {
             background-color: #ffca28;
         }
 
-        .section {
-            margin-top: 40px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #ffca28;
-            text-align: center;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        ul li {
-            background-color: #2c2c2c;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
+        /* Активация кнопки */
+        .active {
+            background-color: #ffca28 !important;
         }
 
         footer {
@@ -98,7 +71,6 @@
             color: #999;
         }
 
-        /* Анимация звёздного фона */
         .stars {
             position: fixed;
             top: 0;
@@ -118,20 +90,6 @@
                 background-position: 2000px -1000px;
             }
         }
-
-        /* Мобильная адаптация */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            .button {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -139,41 +97,34 @@
     <!-- Звёздный фон -->
     <div class="stars"></div>
 
+    <!-- Кнопки навигации -->
+    <div class="nav-buttons">
+        <a href="https://demkys.github.io/main/" class="nav-link" id="main-link">Главная</a>
+        <a href="https://demkys.github.io/rules/" class="nav-link" id="rules-link">Правила</a>
+    </div>
+
     <!-- Контент -->
     <div class="container">
         <h1>Добро пожаловать в NoFap Сообщество!</h1>
-        <p>
-            NoFap – это движение, которое помогает людям освободиться от зависимости от порнографии и мастурбации, улучшить качество жизни, найти мотивацию и цели.
-        </p>
-
-        <!-- Кнопки для переходов -->
-        <div style="text-align: center;">
-            <a href="https://demkys.github.io/rules/" class="button">Правила сообщества</a>
-            <a href="https://t.me/DemkysX" target="_blank" class="button">Присоединиться в Telegram</a>
-        </div>
-
-        <!-- Раздел: Что такое NoFap -->
-        <div class="section">
-            <h2>Что такое NoFap?</h2>
-            <p>NoFap – это вызов себе, который помогает развивать самодисциплину, улучшать отношения и самочувствие.</p>
-        </div>
-
-        <!-- Раздел: Преимущества -->
-        <div class="section">
-            <h2>Преимущества NoFap</h2>
-            <ul>
-                <li>Улучшение концентрации и продуктивности</li>
-                <li>Укрепление уверенности в себе</li>
-                <li>Более глубокие отношения</li>
-                <li>Улучшение физической и психической энергии</li>
-            </ul>
-        </div>
-
-<footer>
-    © 2024 NoFap Сообщество. Все права защищены. <a href="https://t.me/DemkysX" target="_blank" style="color: #ffca28; text-decoration: none;">@DemkysX</a>
-</footer>
-
+        <p>NoFap – это движение, которое помогает людям освободиться от зависимости от порнографии и мастурбации, улучшить качество жизни, найти мотивацию и цели.</p>
     </div>
+
+    <footer>
+        © 2024 NoFap Сообщество. Все права защищены. <a href="https://t.me/DemkysX" target="_blank" style="color: #ffca28; text-decoration: none;">@DemkysX</a>
+    </footer>
+
+    <script>
+        // Логика для активной кнопки
+        const currentUrl = window.location.href;
+        const mainLink = document.getElementById('main-link');
+        const rulesLink = document.getElementById('rules-link');
+
+        if (currentUrl.includes('main')) {
+            mainLink.classList.add('active');
+        } else if (currentUrl.includes('rules')) {
+            rulesLink.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>

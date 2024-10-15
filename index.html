@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная | NoFap Сообщество</title>
+    <title>No Fap Сообщество</title>
     <link rel="icon" href="sbfma7pb (1).png" type="image/png">
     <style>
-        /* Основные стили */
+        /* Общие стили для страницы */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #000000;
+            background-color: #000000; /* Чёрный фон */
             color: #e0e0e0;
+            line-height: 1.6;
             margin: 0;
+            overflow-x: hidden;
             padding: 0 10px;
-            user-select: none;
+            user-select: none; /* Запрет выделения текста */
         }
 
+        /* Основной контейнер */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 50px auto;
-            padding: 30px;
             background-color: #1e1e1e;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 10;
+            position: relative;
         }
 
+        /* Стили заголовка */
         h1 {
-            text-align: center;
             color: #ffca28;
             font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -45,65 +50,26 @@
         }
 
         p {
-            text-align: center;
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .button {
+        a.button {
             display: inline-block;
-            padding: 15px 25px;
-            margin: 10px;
-            font-size: 1.2rem;
-            color: white;
+            padding: 15px 30px;
             background-color: #ff6b6b;
-            border-radius: 5px;
-            text-align: center;
+            color: #fff;
             text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
             transition: background-color 0.3s;
         }
 
-        .button:hover {
+        a.button:hover {
             background-color: #ffca28;
         }
 
-        .active {
-            background-color: #ffca28; /* Цвет для активной кнопки */
-            color: black; /* Цвет текста для активной кнопки */
-        }
-
-        .section {
-            margin-top: 40px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #ffca28;
-            text-align: center;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        ul li {
-            background-color: #2c2c2c;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        /* Анимация звёздного фона */
+        /* Звездное небо */
         .stars {
             position: fixed;
             top: 0;
@@ -112,7 +78,9 @@
             height: 150%;
             background: black url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
             z-index: -1;
-            animation: moveStars 60s linear infinite;
+            animation: moveStars 50s linear infinite;
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         @keyframes moveStars {
@@ -129,54 +97,55 @@
             h1 {
                 font-size: 2.5rem;
             }
+
             p {
                 font-size: 1rem;
             }
-            .button {
+
+            a.button {
                 font-size: 1rem;
                 padding: 10px 20px;
             }
         }
+
+        /* Telegram кнопка */
+        .telegram-button {
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 20px auto;
+            background: url('telegram-64x64.png') no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .telegram-button:hover {
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
-<body>
-
-    <!-- Звёздный фон -->
+<body oncontextmenu="return false;">
     <div class="stars"></div>
 
-    <!-- Контент -->
     <div class="container">
-        <div style="text-align: center;">
-            <a href="https://demkys.github.io/main/" class="button active">Главная</a>
-            <a href="https://demkys.github.io/rules/" class="button">Правила</a>
-        </div>
+        <h1>Добро пожаловать в No Fap Сообщество</h1>
+        <p>Наша цель — поддержать друг друга на пути к самоконтролю, очищению разума и физической гармонии.</p>
+        <a href="https://demkys.github.io/rules/" class="button">Читать Правила Сообщества</a>
 
-        <h1>Добро пожаловать в NoFap Сообщество!</h1>
-        <p>
-            NoFap – это движение, которое помогает людям освободиться от зависимости от порнографии и мастурбации, улучшить качество жизни, найти мотивацию и цели.
-        </p>
-
-        <!-- Раздел: Что такое NoFap -->
-        <div class="section">
-            <h2>Что такое NoFap?</h2>
-            <p>NoFap – это вызов себе, который помогает развивать самодисциплину, улучшать отношения и самочувствие.</p>
-        </div>
-
-        <!-- Раздел: Преимущества -->
-        <div class="section">
-            <h2>Преимущества NoFap</h2>
-            <ul>
-                <li>Улучшение концентрации и продуктивности</li>
-                <li>Укрепление уверенности в себе</li>
-                <li>Более глубокие отношения</li>
-                <li>Улучшение физической и психической энергии</li>
-            </ul>
-        </div>
-
-        <footer>
-            © 2024 NoFap Сообщество. Все права защищены. <a href="https://t.me/DemkysX" target="_blank" style="color: #ffca28; text-decoration: none;">@DemkysX</a>
-        </footer>
+        <p>Присоединяйся к нам в Telegram для ежедневной мотивации и общения:</p>
+        <a href="https://t.me/DemkysX" target="_blank" class="telegram-button"></a>
     </div>
+
+    <script>
+        // Отключение сочетаний клавиш
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) {
+                return false;
+            }
+        };
+    </script>
 
 </body>
 </html>

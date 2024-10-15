@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Fap Сообщество</title>
+    <title>Авторизация через Telegram</title>
     <link rel="icon" href="sbfma7pb (1).png" type="image/png">
     <style>
-        /* Общие стили для всей страницы */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #000000; /* Чёрный фон */
+            background-color: #000000;
             color: #e0e0e0;
-            line-height: 1.6;
+            text-align: center;
             margin: 0;
-            overflow-x: hidden;
-            padding: 0 10px; /* Отступ для мобильных устройств */
-            user-select: none; /* Запрет выделения текста */
+            padding: 0;
         }
-
-        /* Контейнер с контентом */
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -26,158 +21,70 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            z-index: 10;
-            position: relative;
         }
-
-        /* Анимация заголовка */
-        h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ffca28;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h2 {
-            margin-top: 30px;
-            color: #ffca28;
-            font-size: 2rem;
-            text-align: center;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            background-color: #2c2c2c;
-            border-left: 5px solid #ff6b6b;
-            margin-bottom: 10px;
-            padding: 15px;
-            font-size: 1.1rem;
+        .auth-btn {
+            background-color: #ffca28;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        ul li:hover {
-            background-color: #3b3b3b;
-            border-color: #ffca28;
-        }
-
-        .note {
+            font-size: 1.2rem;
             margin-top: 20px;
-            padding: 15px;
-            background-color: #263238;
-            border-left: 5px solid #4a90e2;
-            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        /* Звёздное небо на заднем фоне */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 150%;
-            background: black url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-            z-index: -1;
-            animation: moveStars 50s linear infinite; /* Увеличенная скорость движения звезд */
-            transform: translateZ(0);
-            will-change: transform;
-        }
-
-        /* Плавное движение звёзд */
-        @keyframes moveStars {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 2000px -1000px; /* Изменено направление движения */
-            }
-        }
-
-        /* Контейнер должен корректно реагировать на высоту контента */
-        html, body {
-            min-height: 100%;
-        }
-        .container {
-            margin-bottom: 50px;
-        }
-
-        /* Мобильная адаптация */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            ul li {
-                font-size: 1rem;
-            }
-
-            .container {
-                padding: 20px;
-            }
+        .auth-btn:hover {
+            background-color: #ff6b6b;
         }
     </style>
 </head>
-<body oncontextmenu="return false;"> <!-- Отключение правой кнопки мыши -->
-
-    <!-- Звёздное небо на заднем фоне -->
-    <div class="stars"></div>
-
+<body>
     <div class="container">
-        <h1>No Fap Сообщество</h1>
-        <h2>Раздел 1</h2>
-        <ul>
-            <li>Пункт 1</li>
-            <li>Пункт 2</li>
-            <li>Пункт 3</li>
-        </ul>
-
-        <h2>Раздел 2</h2>
-        <ul>
-            <li>Пункт 1</li>
-            <li>Пункт 2</li>
-            <li>Пункт 3</li>
-        </ul>
-
-        <div class="note">
-            Нотация
-        </div>
-
-        <footer>
-            Футер
-        </footer>
+        <h1>Авторизация через Telegram</h1>
+        <p>Для продолжения, пожалуйста, авторизуйтесь через Telegram.</p>
+        <button class="auth-btn" id="authBtn">Авторизоваться через Telegram</button>
     </div>
 
     <script>
-        // Отключение сочетаний клавиш
-        document.onkeydown = function(e) {
-            if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) {
-                return false;
-            }
-        };
-    </script>
+        // Проверка, есть ли пользовательский токен в cookies
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([.$?*|{}()[]\\\/+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
 
+        function setCookie(name, value, options = {}) {
+            options = {
+                path: '/',
+                // При необходимости добавить срок действия куки
+                // 'max-age': 3600
+                ...options
+            };
+            if (options.expires instanceof Date) {
+                options.expires = options.expires.toUTCString();
+            }
+            let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+            for (let optionKey in options) {
+                updatedCookie += "; " + optionKey;
+                let optionValue = options[optionKey];
+                if (optionValue !== true) {
+                    updatedCookie += "=" + optionValue;
+                }
+            }
+            document.cookie = updatedCookie;
+        }
+
+        // Если куки с токеном отсутствуют, показываем кнопку авторизации
+        if (!getCookie('auth_token')) {
+            document.getElementById('authBtn').addEventListener('click', function() {
+                // Редирект на бота для авторизации
+                window.location.href = 'https://t.me/YourTelegramBot?start=login';  // Замените на ссылку вашего бота
+            });
+        } else {
+            // Если пользователь авторизован, перенаправляем на главную страницу
+            window.location.href = "/main";
+        }
+    </script>
 </body>
 </html>

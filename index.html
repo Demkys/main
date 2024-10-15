@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Fap Сообщество</title>
+    <title>NoFap Сообщество</title>
     <link rel="icon" href="sbfma7pb (1).png" type="image/png">
     <style>
-        /* Общие стили для страницы */
+        /* Общие стили для всей страницы */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #000000; /* Чёрный фон */
@@ -14,11 +14,11 @@
             line-height: 1.6;
             margin: 0;
             overflow-x: hidden;
-            padding: 0 10px;
+            padding: 0 10px; /* Отступ для мобильных устройств */
             user-select: none; /* Запрет выделения текста */
         }
 
-        /* Основной контейнер */
+        /* Контейнер с контентом */
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -26,15 +26,16 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            text-align: center;
             z-index: 10;
             position: relative;
         }
 
-        /* Стили заголовка */
+        /* Анимация заголовка */
         h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             color: #ffca28;
-            font-size: 3rem;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -49,27 +50,68 @@
             }
         }
 
+        h2 {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-top: 30px;
+            text-align: center;
+        }
+
         p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin: 10px 0;
         }
 
-        a.button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #ff6b6b;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #2c2c2c;
+            border-left: 5px solid #ff6b6b;
+            margin-bottom: 10px;
+            padding: 15px;
+            font-size: 1.1rem;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, border-color 0.3s;
+            opacity: 0; /* Начальная прозрачность для анимации */
+            transform: translateX(-100%); /* Сдвиг влево для анимации */
+            animation: slideIn 0.5s forwards; /* Применение анимации */
         }
 
-        a.button:hover {
-            background-color: #ffca28;
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%); /* Начальная позиция */
+                opacity: 0; /* Начальная прозрачность */
+            }
+            100% {
+                transform: translateX(0); /* Конечная позиция */
+                opacity: 1; /* Полная видимость */
+            }
         }
 
-        /* Звездное небо */
+        ul li:hover {
+            background-color: #3b3b3b;
+            border-color: #ffca28;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #263238;
+            border-left: 5px solid #4a90e2;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Фон со звёздами с параллакс-эффектом */
         .stars {
             position: fixed;
             top: 0;
@@ -78,64 +120,99 @@
             height: 150%;
             background: black url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
             z-index: -1;
-            animation: moveStars 50s linear infinite;
+            animation: moveStars 50s linear infinite; /* Увеличенная скорость движения звезд */
             transform: translateZ(0);
             will-change: transform;
         }
 
+        /* Плавное движение звёзд */
         @keyframes moveStars {
             0% {
                 background-position: 0 0;
             }
             100% {
-                background-position: 2000px -1000px;
+                background-position: 2000px -1000px; /* Изменено направление движения */
             }
+        }
+
+        /* Контейнер должен корректно реагировать на высоту контента */
+        html, body {
+            min-height: 100%;
+        }
+        .container {
+            margin-bottom: 50px;
         }
 
         /* Мобильная адаптация */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
-            p {
+            ul li {
                 font-size: 1rem;
             }
 
-            a.button {
-                font-size: 1rem;
-                padding: 10px 20px;
+            .container {
+                padding: 20px;
             }
         }
 
-        /* Telegram кнопка */
-        .telegram-button {
-            display: block;
+        /* Стили для кнопок соцсетей */
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-button {
             width: 64px;
             height: 64px;
-            margin: 20px auto;
-            background: url('telegram-64x64.png') no-repeat center center;
-            background-size: contain;
+            margin: 0 10px; /* Отступ между кнопками */
+            background-size: contain; /* Масштабирование изображения */
             cursor: pointer;
             transition: transform 0.3s;
         }
 
-        .telegram-button:hover {
-            transform: scale(1.1);
+        .social-button:hover {
+            transform: scale(1.1); /* Увеличение кнопки при наведении */
         }
-
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false;"> <!-- Отключение правой кнопки мыши -->
+
+    <!-- Звёздное небо на заднем фоне -->
     <div class="stars"></div>
 
     <div class="container">
-        <h1>Добро пожаловать в No Fap Сообщество</h1>
-        <p>Наша цель — поддержать друг друга на пути к самоконтролю, очищению разума и физической гармонии.</p>
-        <a href="https://demkys.github.io/rules/" class="button">Читать Правила Сообщества</a>
+        <h1>Добро пожаловать в NoFap!</h1>
 
-        <p>Присоединяйся к нам в Telegram для ежедневной мотивации и общения:</p>
-        <a href="https://t.me/DemkysX" target="_blank" class="telegram-button"></a>
+        <h2>Что такое NoFap?</h2>
+        <p>NoFap - это движение, целью которого является отказ от порнографии и мастурбации, чтобы улучшить качество жизни, повысить уровень энергии и наладить личные отношения.</p>
+
+        <h2>Преимущества NoFap</h2>
+        <ul>
+            <li style="animation-delay: 0.2s;">Повышение уверенности в себе.</li>
+            <li style="animation-delay: 0.4s;">Улучшение концентрации и продуктивности.</li>
+            <li style="animation-delay: 0.6s;">Значительное улучшение настроения.</li>
+            <li style="animation-delay: 0.8s;">Налаживание личных отношений.</li>
+            <li style="animation-delay: 1s;">Физические и психологические улучшения.</li>
+        </ul>
+
+        <div class="note">
+            Присоединяйтесь к нашему сообществу, чтобы получить поддержку и мотивацию!
+        </div>
+
+        <!-- Кнопки соцсетей -->
+        <div class="social-buttons">
+            <a href="https://t.me/DemkysX" target="_blank" class="social-button" style="background: url('telegram-64x64.png') no-repeat center;"></a>
+            <a href="https://www.instagram.com" target="_blank" class="social-button" style="background: url('instagram-64x64.png') no-repeat center;"></a>
+            <a href="https://www.facebook.com" target="_blank" class="social-button" style="background: url('facebook-64x64.png') no-repeat center;"></a>
+        </div>
+
+        <footer>
+            Присоединяйтесь к нам и начните свой путь к лучшей жизни.
+        </footer>
     </div>
 
     <script>
